@@ -1,9 +1,14 @@
 import React from 'react';
+import SearchBar from './SearchBar';
+import 'antd/dist/antd.css';
 
 class App extends React.Component {
   render() {
     return(
-      <div>Cocktail Recipes</div>
+      <div>
+        <div>Cocktail Recipes</div>
+        <SearchBar />
+      </div>
     )
   }
 }
