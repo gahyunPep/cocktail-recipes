@@ -1,17 +1,19 @@
 import React from 'react';
 import { Input } from 'antd';
-import 'antd/dist/antd.css';
 
 const { Search } = Input;
 
 class SearchBar extends React.Component {
   state = { term: '' };
 
+  onSearch = (value) => {
+    this.setState({ term: value }, this.props.onSearchSubmit(this.state.term));
+  }
+
   render(){
     return(
       <div>
-    <Search placeholder="input search text" onSearch={value => console.log(value)} enterButton />
-
+        <Search placeholder="input search text" onSearch={this.onSearch} enterButton />
       </div>
     );
   }
