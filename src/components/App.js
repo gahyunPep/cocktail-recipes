@@ -1,9 +1,12 @@
 import React from "react";
-import SearchBar from "./SearchBar";
 import "antd/dist/antd.css";
 import { resolveOnChange } from "antd/lib/input/Input";
-
+import SearchBar from "./SearchBar";
+import CocktailList from './CocktailList';
 class App extends React.Component {
+
+  state = { cocktails: [] };
+
   handleSearchSubmit = (term) => {
     fetch(`https://the-cocktail-db.p.rapidapi.com/filter.php?i=${term}`, {
       "method": "GET",
@@ -38,6 +41,7 @@ class App extends React.Component {
       return json;
     })
     .then((data) => {
+      this.setState({ cocktails: data.drinks });
       console.log(data.drinks);
     })
     .catch(err => {
@@ -50,6 +54,7 @@ class App extends React.Component {
       <div>
         <div>Cocktail Recipes</div>
         <SearchBar onSearchSubmit={this.handleSearchSubmit}/>
+        <CocktailList cocktails={this.state.cocktails}/>
       </div>
     );
   }
