@@ -51,8 +51,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>Cocktail Recipes</div>
+      <div style={{ margin: '2%'}}>
+        <div style={{ fontSize: '5vw', textAlign: 'center', margin: '1%'}}>Cocktail Recipes</div>
         <SearchBar onSearchSubmit={this.handleSearchSubmit}/>
         <CocktailList cocktails={this.state.cocktails}/>
       </div>

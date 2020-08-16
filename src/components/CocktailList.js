@@ -10,7 +10,7 @@ const CocktailList = (props) => {
       <Card
         key={idDrink}
         hoverable
-        style={{ width: '20%', margin: '2%', float:'left'}}
+        style={{ width: '21%', margin: '2%', float:'left'}}
         cover={
           <img
             alt={strDrink}

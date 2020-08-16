@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
 
   render(){
     return(
-      <div>
+      <div style={{margin: '2%'}}>
         <Search placeholder="input search text" onSearch={this.onSearch} enterButton />
       </div>
     );
