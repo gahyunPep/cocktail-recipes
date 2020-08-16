@@ -7,7 +7,9 @@ class SearchBar extends React.Component {
   state = { term: '' };
 
   onSearch = (value) => {
-    this.setState({ term: value }, this.props.onSearchSubmit(this.state.term));
+    console.log("onSearch "+value);
+    this.setState({ term: value }, () => {this.props.onSearchSubmit(this.state.term)
+    });
   }
 
   render(){
@@ -17,7 +19,6 @@ class SearchBar extends React.Component {
       </div>
     );
   }
-
 
 }
 

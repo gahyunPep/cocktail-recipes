@@ -8,6 +8,8 @@ class App extends React.Component {
   state = { cocktails: [] };
 
   handleSearchSubmit = (term) => {
+    console.log("Before Search " + term);
+
     fetch(`https://the-cocktail-db.p.rapidapi.com/filter.php?i=${term}`, {
       "method": "GET",
       "headers": {
