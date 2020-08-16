@@ -47,6 +47,7 @@ class App extends React.Component {
       console.log(data.drinks);
     })
     .catch(err => {
+      this.setState({ cocktails: null });
       console.log(err);
     });
   };

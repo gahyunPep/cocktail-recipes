@@ -5,7 +5,7 @@ import '../styles/CocktailList.css';
 const { Meta } = Card;
 
 const CocktailList = (props) => {
-  const cocktails = props.cocktails.map(
+  const cocktails = props.cocktails == null? <div style={{textAlign: 'center'}}>Please try again with other ingredients</div> : props.cocktails.map(
     ({ strDrink, strDrinkThumb, idDrink }) => (
       <Card
         key={idDrink}
